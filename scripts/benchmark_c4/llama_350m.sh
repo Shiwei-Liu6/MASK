@@ -1,4 +1,4 @@
-# LLaMA-350M, GaLore-Adam, 4 A100, 1 Node
+# LLaMA-350M, MASK-Adam, 4 A100, 1 Node
 torchrun --standalone --nproc_per_node 4 torchrun_main.py \
     --model_config configs/llama_350m.json \
     --lr 0.01 \

@@ -1,4 +1,4 @@
-# LLaMA-7B, GaLore-Adam, 8 A100, 8 Node
+# LLaMA-7B, MASK-Adam, 8 A100, 8 Node
 torchrun --standalone --nnodes 8 --nproc_per_node 8 torchrun_main.py \
     --model_config configs/llama_7b.json \
     --lr 0.005 \

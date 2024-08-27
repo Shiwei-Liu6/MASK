@@ -1,4 +1,4 @@
-# LLaMA-60M, GaLore-Adam, 1 A100, 1 Node
+# LLaMA-60M, MASK-Adam, 1 A100, 1 Node
 torchrun --standalone --nproc_per_node 1 torchrun_main.py \
     --model_config configs/llama_60m.json \
     --lr 0.01 \

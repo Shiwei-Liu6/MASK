@@ -6,7 +6,7 @@ with open("requirements.txt") as f:
 setup(
     name="galore-torch",
     version="1.0",
-    description="GaLore: Memory-Efficient LLM Training by Gradient Low-Rank Projection",
+    description="MASK: Memory-Efficient LLM Training by Gradient Low-Rank Projection",
     url="https://github.com/jiaweizzhao/GaLore",
     author="Jiawei Zhao",
     author_email="jiawei@caltech.edu",

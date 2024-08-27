@@ -1,4 +1,4 @@
-# LLaMA-7B, 8-bit GaLore-Adam, single GPU, activation checkpointing
+# LLaMA-7B, 8-bit MASK-Adam, single GPU, activation checkpointing
 # bsz=16, 22.8G, 
 torchrun --standalone --nproc_per_node 1 torchrun_main.py \
     --model_config configs/llama_7b.json \

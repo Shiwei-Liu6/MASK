@@ -524,7 +524,7 @@ def main():
             if not any(target_key in module_name for target_key in target_modules_list):
                 continue
 
-            print('enable GaLore for weights in module: ', module_name)
+            print('enable MASK for weights in module: ', module_name)
             galore_params.append(module.weight)
 
         id_galore_params = [id(p) for p in galore_params]

@@ -65,7 +65,7 @@ def parse_args(args):
     # beta1 for adafactor
     parser.add_argument("--beta1", type=float, default=0.0)
     
-    # GaLore parameters
+    # MASK parameters
     parser.add_argument("--rank", type=int, default=128)
     parser.add_argument("--update_proj_gap", type=int, default=50)
     parser.add_argument("--galore_scale", type=float, default=1.0)
@@ -271,7 +271,7 @@ def main(args):
             if not any(target_key in module_name for target_key in target_modules_list):
                 continue
             
-            print('enable GaLore for weights in module: ', module_name)
+            print('enable MASK for weights in module: ', module_name)
             galore_params.append(module.weight)
         id_galore_params = [id(p) for p in galore_params]
         # make parameters without "rank" to another group
@@ -285,7 +285,7 @@ def main(args):
     logger.info(f"Total params: {sum(p.numel() for p in model.parameters()) / 1_000_000:.2f}M")
     logger.info(f"Trainable params: {sum(p.numel() for p in model.parameters() if p.requires_grad) / 1_000_000:.2f}M")
     if 'galore' in args.optimizer.lower():
-        logger.info(f"Total params with GaLore enabled: {sum(p.numel() for p in galore_params) / 1_000_000:.2f}M")
+        logger.info(f"Total params with MASK enabled: {sum(p.numel() for p in galore_params) / 1_000_000:.2f}M")
     logger.info(f"Saving model to {args.save_dir} every {args.save_every} update steps")
     
     layer_wise_flag = False

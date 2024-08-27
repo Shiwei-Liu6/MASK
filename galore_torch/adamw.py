@@ -92,7 +92,7 @@ class AdamW(Optimizer):
                 if 'dim' not in group:
                     group['dim'] = 2
                     
-                # GaLore Projection
+                # MASK Projection
                 if "rank" in group:
                     if "projector" not in state:
                         if group['dim'] <=2:
@@ -128,7 +128,7 @@ class AdamW(Optimizer):
                 # compute norm gradient
                 norm_grad = exp_avg / denom
                 
-                # GaLore Projection Back
+                # MASK Projection Back
                 if "rank" in group:
                     norm_grad = state["projector"].project_back(norm_grad)
                 

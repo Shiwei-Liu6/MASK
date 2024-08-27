@@ -1,4 +1,4 @@
-# LLaMA-7B, 8-bit GaLore-Adam, single GPU
+# LLaMA-7B, 8-bit MASK-Adam, single GPU
 # 22.72G, 0.37s/it
 torchrun --standalone --nproc_per_node 1 torchrun_main.py \
     --model_config configs/llama_7b.json \

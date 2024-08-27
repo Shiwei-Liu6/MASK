@@ -189,7 +189,7 @@ class Adafactor(Optimizer):
                 if 'dim' not in group:
                     group['dim'] = 2
                         
-                # GaLore Projection
+                # MASK Projection
                 if "rank" in group:
                     if "projector" not in state:
                         if group['dim'] <=2:
@@ -259,7 +259,7 @@ class Adafactor(Optimizer):
                     exp_avg.mul_(group["beta1"]).add_(update, alpha=(1 - group["beta1"]))
                     update = exp_avg
                 
-                # GaLore Projection Back
+                # MASK Projection Back
                 if "rank" in group:
                     update = state["projector"].project_back(update)
     

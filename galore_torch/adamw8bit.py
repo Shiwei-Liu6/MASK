@@ -43,7 +43,7 @@ class AdamW8bit(Optimizer2State):
                 if 'dim' not in group:
                     group['dim'] = 2
                     
-                # GaLore Projection
+                # MASK Projection
                 if "rank" in group:
                     if "projector" not in state:
                         if group['dim'] <= 2:
@@ -70,7 +70,7 @@ class AdamW8bit(Optimizer2State):
                 self.update_step(group, p, gindex, pindex)
                 torch.cuda.synchronize()
                 
-                # GaLore Projection Back
+                # MASK Projection Back
                 if "rank" in group:
                     p.data = p.saved_data.add_(state["projector"].project_back(p.data))  
                     

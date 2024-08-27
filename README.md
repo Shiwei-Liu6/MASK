@@ -39,7 +39,7 @@ or if you want to install from source:
 
 ```bash
 git clone git@github.com:jiaweizzhao/GaLore.git
-cd GaLore
+cd MASK
 pip install -e .
 ```
 

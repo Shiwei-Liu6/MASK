@@ -7,7 +7,7 @@ from tensorly import tenalg
 # We use tensor decomposition using tensorly library: https://tensorly.org/stable/index.html
 class GaLoreProjectorTensor:
     """
-    A class that represents a projector for the GaLore algorithm.
+    A class that represents a projector for the MASK algorithm.
 
     Args:
         rank (int): The rank of the projector.
